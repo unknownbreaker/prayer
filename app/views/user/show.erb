@@ -1,0 +1,38 @@
+<div class="container">
+  <% if @myself %>
+  <h1>Your Profile</h1>
+  <% else %>
+  <h1><%= @user.first_name %>'s Profile</h1>
+  <% end %>
+
+  <table>
+    <tr>
+      <td>Username:</td>
+      <td><%= @user.username %></td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td><%= @user.first_name %> <%= @user.last_name %></td>
+    </tr>
+    <tr>
+      <td>Country:</td>
+      <td><%= @user.country %></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><%= @user.email %></td>
+    </tr>
+  </table>
+
+  <% if @myself %>
+  <a href="/users/<%= @user.id %>/edit">Edit profile</a>
+  <% end %>
+
+
+  <div class="prayerrequests">
+    <% @prayerrequests.each do |prayerrequest| %>
+    <%= erb :'entry/_prayerrequest', locals: { prayerrequest: prayerrequest } %>
+    <% end %>
+  </div>
+
+</div>

@@ -1,0 +1,12 @@
+<% if user %>
+<ul>
+  <li>Hi, <a href="/users/<%= user.id %>"><%= user.first_name %></a>.</li>
+  <li><a href="/users/<%= user.id %>/favorites">FAVORITES</a></li>
+  <li><a href="/signout">SIGN OUT</a></li>
+</ul>
+<% else %>
+<ul>
+  <li><a href="/users/new">SIGN UP</a></li>
+  <li><a href="/signin">SIGN IN</a></li>
+</ul>
+<% end %>

@@ -1,0 +1,40 @@
+<div id="form_signup">
+  <form action="/users" method="POST">
+    <table>
+      <tr>
+        <td>Username:</td>
+        <td><input type="text" name="user[username]" value="<%= username %>"></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" name="user[password]" value=""></td>
+      </tr>
+      <tr>
+        <td>Password confirm:</td>
+        <td><input type="password" name="user[password_confirmation]" value=""></td>
+      </tr>
+      <tr>
+        <td>First Name:</td>
+        <td><input type="text" name="user[first_name]" value=""></td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td><input type="text" name="user[last_name]" value=""></td>
+      </tr>
+      <tr>
+        <td>Country:</td>
+        <td><input type="text" name="user[country]" value=""></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="text" name="user[email]" value=""></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="Sign up"></td>
+      </tr>
+    </table>
+  </form>
+
+</div>
+
+

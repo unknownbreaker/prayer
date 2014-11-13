@@ -1,0 +1,9 @@
+<div id="extras">
+
+  <% if entry.favorites.empty? %>
+  <%= erb :'entry/_options_favorite', locals: { entry: entry } %>
+  <% else %>
+  <%= erb :'entry/_options_unfavorite', locals: { entry: entry } %>
+  <% end %>
+
+</div>

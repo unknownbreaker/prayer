@@ -1,0 +1,10 @@
+<div class="container">
+  <%= erb :'entry/_form_prayerrequest_new' %>
+  <div class="feed">
+    <% @prayerrequests.each do |prayerrequest| %>
+    <%= erb :'entry/_prayerrequest', locals: { prayerrequest: prayerrequest } %>
+    <% end %>
+  </div>
+
+
+</div>

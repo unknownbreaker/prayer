@@ -1,0 +1,6 @@
+<div class="comment">
+  <a href="/users/<%= entry.user.id %>"><%= entry.user.username %></a>: <%= entry.comment %>
+  <div id="options">
+    <%= erb :'entry/_options', locals: { entry: entry } %>
+  </div>
+</div>

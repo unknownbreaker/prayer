@@ -20,7 +20,14 @@
     <div class="logo"><a href="/">Pray<sup>&trade;</sup></a></div>
     <div class="nav"><%= erb :_nav_menu, locals: { user: current_user } %></div>
   </div>
-
-  <%= yield %>
+  <div class="body">
+    <div class="left_col">
+    </div>
+    <div class="mid_col">
+      <%= yield %>
+    </div>
+    <div class="right_col">
+    </div>
+  </div>
 </body>
 </html>

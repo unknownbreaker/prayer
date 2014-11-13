@@ -1,0 +1,6 @@
+<i class="fa fa-star-o"></i>
+<form action="/<%= entry.class.to_s.downcase %>s/<%= entry.id %>/favorites" method="POST" class="unfavorite_button">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="unfavorite">
+</form>
+<% if is_prayerrequest?(entry) && entry.comments.length > 10%> &middot; <a href="/<%= entry.class.to_s.downcase %>s/<%= entry.id %>" class="showHiddenComments">comments</a><% end %>

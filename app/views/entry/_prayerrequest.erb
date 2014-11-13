@@ -1,0 +1,21 @@
+<div class="prayerrequest">
+  <div class="pr_header">
+    <p><a href="/users/<%= prayerrequest.user.id %>"><%= prayerrequest.user.username %></a> from <%= prayerrequest.user.country %></p>
+    <p><%= prayerrequest.prayerrequest %></p>
+  </div>
+  <div class="options">
+    <%= erb :'entry/_options', locals: { entry: prayerrequest } %>
+  </div>
+  <div class="comments">
+    <ul>
+      <% prayerrequest.comments.last(10).each do |comment| %>
+      <li><%= erb :'entry/_comment', locals: { entry: comment } %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="comment_box">
+    <ul>
+      <li><%= erb :'entry/_form_comment_new', locals: { entry: prayerrequest } %></li>
+    </ul>
+  </div>
+</div>
