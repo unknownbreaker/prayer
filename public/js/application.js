@@ -30,6 +30,7 @@ $(document).ready(function() {
     type = $form.attr('method');
     data = $form.find('textarea').val();
     current_comment = $form.parent().parent().parent().parent().find('.comments>ul');
+    console.log(current_comment);
 
     $.ajax({
       url: url,

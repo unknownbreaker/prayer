@@ -4,13 +4,15 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: #F8F8F8;
+  background-color: #cccccc;
   font: 200 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 200;
   letter-spacing: 0px;
   color: #4A4A4A;
   overflow-y: scroll;
 }
+
+
 
 .container {
   margin: 20px auto;
@@ -19,20 +21,85 @@ body {
   /*border: 1px dotted black;*/
 }
 
+
+.header {
+  display: inline-block;
+  width: 100%;
+  background-color: #447799;
+  color: #aacccc;
+  padding-bottom: 1em;
+}
+
+.header a {
+  text-decoration: none;
+  color: #aacccc;
+}
+
+.header a:hover {
+  color: #44bbcc;
+}
+
 .header .logo {
   display: inline-block;
+  font-size: 4em;
+  padding-left: .5em;
+  padding-top: .2em;
+  /*border: 1px solid black;*/
 }
 .header .nav {
-  display:inline-block;
+  display: inline-block;
+  float: right;
+  /*border: 1px solid black;*/
+}
+
+.header .nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  font-size: 1.3em;
+  padding-top: 1.5em;
+  padding-right: 1.5em;
 }
 
 .mid_col {
   padding-left: 30px;
 }
 
+.body a {
+  color: #225533;
+  text-decoration: none;
+  font-weight: 500;
+}
+.body a:hover {
+  color: #0055bb;
+  text-decoration: underline;
+}
+
 .feed {
   padding-left: 50px;
 }
+
+
+.pr_header {
+  font-weight: 400;
+}
+
+.pr_header p {
+  margin: 0;
+  padding-top: .3em;
+}
+
+.comments li {
+  font-size: .8em;
+  margin-top: .2em;
+  list-style-type: none;
+}
+
+.comment_box ul li {
+  list-style-type: none;
+}
+
+
+/* BUTTONS */
 
 .favorite_button, .unfavorite_button {
   display: inline;
@@ -40,9 +107,30 @@ body {
   margin: 0 -5px 0 -5px;
 }
 .favorite_button>input, .unfavorite_button>input {
-background-color: transparent;
-text-decoration: underline;
-border: none;
-color: blue;
-cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  color: #225533;
+  cursor: pointer;
 }
+
+.favorite_button>input:hover, .unfavorite_button>input:hover {
+  text-decoration: underline;
+  color: #0055bb;
+}
+.prayerrequest_box form input {
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  color: #225533;
+  cursor: pointer;
+}
+.comment_box ul li form input {
+  padding-bottom: 15px;
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  color: #225533;
+  cursor: pointer;
+}
+
