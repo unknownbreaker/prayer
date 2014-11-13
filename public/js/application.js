@@ -4,10 +4,10 @@ $(document).ready(function() {
   // of the feed.
   $('.prayerrequest_box>form').on('submit', function(event) {
     event.preventDefault();
-    $form = $(event.target);
-    url = $form.attr('action');
-    type = $form.attr('method');
-    data = $form.find('textarea').val();
+    var $form = $(event.target);
+    var url = $form.attr('action');
+    var type = $form.attr('method');
+    var data = $form.find('textarea').val();
 
     $.ajax({
       url: url,
@@ -25,11 +25,11 @@ $(document).ready(function() {
   // list of comments under that respective prayer request
   $('.feed').on('submit', '.comment_box>ul>li>form', function(event) {
     event.preventDefault();
-    $form = $(event.target);
-    url = $form.attr('action');
-    type = $form.attr('method');
-    data = $form.find('textarea').val();
-    current_comment = $form.parent().parent().parent().parent().find('.comments>ul');
+    var $form = $(event.target);
+    var url = $form.attr('action');
+    var type = $form.attr('method');
+    var data = $form.find('textarea').val();
+    var current_comment = $form.parent().parent().parent().parent().find('.comments>ul');
     console.log(current_comment);
 
     $.ajax({
@@ -47,7 +47,7 @@ $(document).ready(function() {
 
   // Toggles favorite or unfavorite when clicked. Updates
   // the database with the creating or destroying them.
-  $('.feed').on('submit', '.prayerrequest', function(event) {
+  $('.feed').on('submit', '.prayerrequest>.comments', function(event) {
     Control.toggleFavorite(event);
   });
   // Toggles favorite/unfavorite in the Favorites page.
@@ -63,15 +63,15 @@ $(document).ready(function() {
 Control = {
   toggleFavorite: function(event) {
     event.preventDefault();
-    $form = $(event.target);
-    url = $form.attr('action');
+    var $form = $(event.target);
+    var url = $form.attr('action');
     if($form.find('input[name="_method"]').attr('value') == null) {
       type = $form.attr('method');
     } else {
       type = $form.find('input[name="_method"]').attr('value');
     }
 
-    $parent = $form.parent()
+    var $parent = $form.parent()
     console.log(url);
     console.log(type);
 
