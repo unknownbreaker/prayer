@@ -62,7 +62,7 @@ post '/users' do
 
   if user.save
     session[:id] = user.id
-    redirect to('entry/index')
+    redirect to('/prayerrequests')
   else
     set_error "Passwords do not match"
     session[:signup_username] = params[:user][:username]
