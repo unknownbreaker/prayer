@@ -28,6 +28,12 @@
   <a href="/users/<%= @user.id %>/edit">Edit profile</a>
   <% end %>
 
+  <% if @prayerrequests %>
+  <h3>Prayer requests you have made</h3>
+  <% else %>
+  <h3>No prayer requests</h3>
+  <% end %>
+
 
   <div class="prayerrequests">
     <% @prayerrequests.each do |prayerrequest| %>

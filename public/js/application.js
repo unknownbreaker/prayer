@@ -47,13 +47,50 @@ $(document).ready(function() {
 
   });
 
+
+  $('.prayerrequests').on('submit', '.comment_box>ul>li>form', function(event) {
+    event.preventDefault();
+    var $form = $(event.target);
+    var url = $form.attr('action');
+    var type = $form.attr('method');
+    var data = $form.find('textarea').val();
+    var current_comment = $form.parent().parent().parent().parent().find('.comments>ul');
+    console.log(current_comment);
+
+    $.ajax({
+      url: url,
+      type: type,
+      dataType: 'text',
+      data: { comment: data }
+    }).done(function(response) {
+      console.log(response);
+      View.renderComment(response, current_comment);
+      View.clearTextField($form);
+    });
+
+
+  });
+
   // Toggles favorite or unfavorite when clicked. Updates
   // the database with the creating or destroying them.
+  $('.feed').on('submit', '.prayerrequest>.options', function(event) {
+    Control.toggleFavorite(event);
+  });
+
   $('.feed').on('submit', '.prayerrequest>.comments', function(event) {
     Control.toggleFavorite(event);
   });
+
   // Toggles favorite/unfavorite in the Favorites page.
-  $('.favorites').on('submit', '.prayerrequest', function(event) {
+  $('.favorites').on('submit', '.prayerrequest>.options', function(event) {
+    Control.toggleFavorite(event);
+  });
+
+  $('.prayerrequests').on('submit', '.prayerrequest>.options', function(event) {
+    Control.toggleFavorite(event);
+  });
+
+  $('.prayerrequests').on('submit', '.prayerrequest>.comments', function(event) {
     Control.toggleFavorite(event);
   });
 

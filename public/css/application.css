@@ -134,3 +134,7 @@ body {
   cursor: pointer;
 }
 
+
+table td {
+  padding-right: 10px;
+}
