@@ -16,6 +16,7 @@ $(document).ready(function() {
       data: { prayerrequest: data }
     }).done(function(response) {
       View.renderPrayerrequest(response);
+      View.clearTextField($form);
     });
 
 
@@ -40,6 +41,7 @@ $(document).ready(function() {
     }).done(function(response) {
       console.log(response);
       View.renderComment(response, current_comment);
+      View.clearTextField($form);
     });
 
 
@@ -98,5 +100,9 @@ View = {
 
   toggleFavorite: function(response, current_element) {
     $(current_element).empty().append(response);
+  },
+
+  clearTextField: function(form) {
+    form.find('textarea').val("");
   }
 }
