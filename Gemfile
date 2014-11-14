@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.0'
 
 # PostgreSQL driver
 gem 'pg'
@@ -22,6 +22,8 @@ gem 'pry'
 gem 'faker'
 
 gem 'unicorn'
+
+gem 'thin'
 
 group :test do
   gem 'shoulda-matchers'

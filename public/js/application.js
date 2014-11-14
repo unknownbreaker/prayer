@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
-  // Prepends a newly created prayer request to the top
-  // of the feed.
+  // Prepends prayer request to top of the feed.
   $('.prayerrequest_box>form').on('submit', function(event) {
     event.preventDefault();
     var $form = $(event.target);
@@ -22,74 +21,52 @@ $(document).ready(function() {
 
   });
 
-  // Appends a newly created comment at the bottom of a
-  // list of comments under that respective prayer request
+  // Appends comment to bottom of list of comments in main feed.
   $('.feed').on('submit', '.comment_box>ul>li>form', function(event) {
-    event.preventDefault();
-    var $form = $(event.target);
-    var url = $form.attr('action');
-    var type = $form.attr('method');
-    var data = $form.find('textarea').val();
-    var current_comment = $form.parent().parent().parent().parent().find('.comments>ul');
-    console.log(current_comment);
-
-    $.ajax({
-      url: url,
-      type: type,
-      dataType: 'text',
-      data: { comment: data }
-    }).done(function(response) {
-      console.log(response);
-      View.renderComment(response, current_comment);
-      View.clearTextField($form);
-    });
-
-
+    Control.processComment(event);
   });
 
-
+  // Appends comment to bottom of list of comments in user's profile page.
   $('.prayerrequests').on('submit', '.comment_box>ul>li>form', function(event) {
-    event.preventDefault();
-    var $form = $(event.target);
-    var url = $form.attr('action');
-    var type = $form.attr('method');
-    var data = $form.find('textarea').val();
-    var current_comment = $form.parent().parent().parent().parent().find('.comments>ul');
-    console.log(current_comment);
-
-    $.ajax({
-      url: url,
-      type: type,
-      dataType: 'text',
-      data: { comment: data }
-    }).done(function(response) {
-      console.log(response);
-      View.renderComment(response, current_comment);
-      View.clearTextField($form);
-    });
-
-
+    Control.processComment(event);
   });
 
-  // Toggles favorite or unfavorite when clicked. Updates
-  // the database with the creating or destroying them.
+  // Appends comment to bottom of list of comments in favorite's page.
+  $('.favorites').on('submit', '.comment_box>ul>li>form', function(event) {
+    Control.processComment(event);
+  });
+
+  // Toggles favorite/unfavorite in the main feed. 
   $('.feed').on('submit', '.prayerrequest>.options', function(event) {
     Control.toggleFavorite(event);
   });
 
+  // Toggles favorite/unfavorite for comment in the main feed.
   $('.feed').on('submit', '.prayerrequest>.comments', function(event) {
     Control.toggleFavorite(event);
   });
 
-  // Toggles favorite/unfavorite in the Favorites page.
-  $('.favorites').on('submit', '.prayerrequest>.options', function(event) {
+  // Toggles favorite/unfavorite for prayer request in the Favorites page.
+  $('.favorite_prayerrequests').on('submit', '.prayerrequest>.options', function(event) {
     Control.toggleFavorite(event);
   });
 
+  // Toggles favorite/unfavorite for comment in the Favorites page.
+  $('.favorite_prayerrequests').on('submit', '.prayerrequest>.comments', function(event) {
+    Control.toggleFavorite(event);
+  });
+
+  // Toggles favorite/unfavorite for comment in the comment section of Favorites page.
+  $('.favorite_comments').on('submit', '.comment', function(event) {
+    Control.toggleFavorite(event);
+  });
+
+  // Toggles favorite/unfavorite for prayer request in a user's profile page.
   $('.prayerrequests').on('submit', '.prayerrequest>.options', function(event) {
     Control.toggleFavorite(event);
   });
 
+  // Toggles favorite/unfavorite for comment in a user's profile page.
   $('.prayerrequests').on('submit', '.prayerrequest>.comments', function(event) {
     Control.toggleFavorite(event);
   });
@@ -122,6 +99,27 @@ Control = {
       console.log(response);
       View.toggleFavorite(response, $parent);
     });
+  }, 
+
+  processComment: function(event) {
+    event.preventDefault();
+    var $form = $(event.target);
+    var url = $form.attr('action');
+    var type = $form.attr('method');
+    var data = $form.find('textarea').val();
+    var current_comment = $form.parent().parent().parent().parent().find('.comments>ul');
+    console.log(current_comment);
+
+    $.ajax({
+      url: url,
+      type: type,
+      dataType: 'text',
+      data: { comment: data }
+    }).done(function(response) {
+      console.log(response);
+      View.renderComment(response, current_comment);
+      View.clearTextField($form);
+    });
   }
 }
 
@@ -132,7 +130,7 @@ View = {
 
   renderComment: function(response, current_comment) {
     response = '<li>' + response + '</li>'
-    $(current_comment).append(response);
+    $(current_comment).append($(response).hide().fadeIn('slow'));
   },
 
   toggleFavorite: function(response, current_element) {

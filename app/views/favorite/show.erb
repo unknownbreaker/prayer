@@ -3,14 +3,14 @@
   <h1>Your favorited prayer requests and comments</h1>
   <div class="favorites">
     <h3>Prayer requests</h3>
-    <div class="prayerrequest favorite_prayerrequests">
+    <div class="favorite_prayerrequests">
       <% @favorite_prayerrequests.each do |favorite| %>
       <%= erb :'entry/_prayerrequest', locals: { prayerrequest: favorite.favoriteable } %>
       <% end %>
     </div>
 
     <h3>Comments</h3>
-    <div class="prayerrequest favorite_comments">
+    <div class="favorite_comments">
       <% @favorite_comments.each do |favorite| %>
       <%= erb :'entry/_comment', locals: { entry: favorite.favoriteable } %>
       <% end %>
