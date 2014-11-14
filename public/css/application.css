@@ -118,23 +118,17 @@ body {
   text-decoration: underline;
   color: #0055bb;
 }
-.prayerrequest_box form input {
-  background-color: transparent;
-  text-decoration: none;
-  border: none;
-  color: #225533;
-  cursor: pointer;
-}
-.comment_box ul li form input {
-  padding-bottom: 15px;
-  background-color: transparent;
-  text-decoration: none;
-  border: none;
-  color: #225533;
-  cursor: pointer;
-}
 
 
+
+/*
 table td {
   padding-right: 10px;
+}
+*/
+
+.showHiddenComments {
+  text-decoration: none;
+  font-weight: 200;
+  color: #0055bb;
 }

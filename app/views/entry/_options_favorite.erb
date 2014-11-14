@@ -1,4 +1,4 @@
 <form action="/<%= entry.class.to_s.downcase %>s/<%= entry.id %>/favorites" method="POST" class="favorite_button">
-  <input type="submit" value="favorite">
+  <input type="submit" value="Favorite">
 </form>
-<% if is_prayerrequest?(entry) && entry.comments.length > 10%> &middot; <a href="/<%= entry.class.to_s.downcase %>s/<%= entry.id %>" class="showHiddenComments">comments</a><% end %>
+<% if is_prayerrequest?(entry) && entry.comments.length > 10%> &middot; <a href="/<%= entry.class.to_s.downcase %>s/<%= entry.id %>" class="showHiddenComments">View more comments</a><% end %>

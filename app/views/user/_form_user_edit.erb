@@ -4,34 +4,34 @@
     <table>
       <tr>
         <td>Username:</td>
-        <td><input type="text" name="user[username]" value="<%= user.username %>"></td>
+        <td><input type="text" name="user[username]" value="<%= user.username %>" class="field-light"></td>
       </tr>
       <tr>
         <td>Password:</td>
-        <td><input type="password" name="user[password]" value="<%= user.password %>"></td>
+        <td><input type="password" name="user[password]" value="<%= user.password %>" class="field-light"></td>
       </tr>
       <tr>
         <td>Password confirm:</td>
-        <td><input type="password" name="user[password_confirmation]" value="<%= user.password %>"></td>
+        <td><input type="password" name="user[password_confirmation]" value="<%= user.password %>" class="field-light"></td>
       </tr>
       <tr>
         <td>First Name:</td>
-        <td><input type="text" name="user[first_name]" value="<%= user.first_name %>"></td>
+        <td><input type="text" name="user[first_name]" value="<%= user.first_name %>" class="field-light"></td>
       </tr>
       <tr>
         <td>Last Name:</td>
-        <td><input type="text" name="user[last_name]" value="<%= user.last_name %>"></td>
+        <td><input type="text" name="user[last_name]" value="<%= user.last_name %>" class="field-light"></td>
       </tr>
       <tr>
         <td>Country:</td>
-        <td><input type="text" name="user[country]" value="<%= user.country %>"></td>
+        <td><input type="text" name="user[country]" value="<%= user.country %>" class="field-light"></td>
       </tr>
       <tr>
         <td>Email:</td>
-        <td><input type="text" name="user[email]" value="<%= user.email %>"></td>
+        <td><input type="text" name="user[email]" value="<%= user.email %>" class="field-light"></td>
       </tr>
       <tr>
-        <td colspan="2"><input type="submit" value="Confirm changes"></td>
+        <td colspan="2"><input type="submit" value="Confirm changes" class="button-big button-blue-outline mb1"><%= erb :'user/_form_user_delete', locals: { user: @user} %></td>
       </tr>
 
     </table>
