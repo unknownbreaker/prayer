@@ -1,27 +1,43 @@
-### Purpose
+# Prayer App
 
-Phase 3 Audition Project:
+### User Stories
 
-1. Give U time to demonstrate your skills to yourself and the phase 3 instructors.
-2. Solidify your learning in a solo challenge.
-3. Give U the opportunity to exercise your creativity.
+* I would like to submit prayer requests.<br>
+    I want to tag my prayer requests. <br>
+    I want to edit my prayer request, in case I make a mistake.<br>
+    I want to delete prayer requests, if I change my mind. All comments should be deleted, if there are any.
 
-### Parameters
 
-U have 12 hours, from 10 AM Wednesday to 10 PM Wednesday.
+* I want to filter by tags, so I can pray for certain categories of requests.<br>
+    I want to see other prayer requests from anywhere in the world.<br>
+    I want my front page to update with requests from only certain countries.
 
-Implement the following:
 
-1. ActiveRecord with Associations
-2. Authentication
-3. Restful routes
-4. jQuery
-5. AJAX
+* I want to see running comments together in one chain for a prayer request.<br>
+    I want to comment on prayer requests.<br>
+    I want to be notified when my request receives a comment.
 
-Stretch goals:
 
-1. Error handling
-2. User permissions
-3. JavaScript MVC (if it makes sense for your app)
+* I want to have a favorites list.<br>
+    I want to be able to mark prayer requests or comments as favorites.
 
-Don’t worry about the line count thing I mentioned, we won’t bother about it until we figure out a good way to do it.
+### Not Implemented
+
+The UD in CRUD was not implemented for comments and prayer requests. My time management required prioritizing CRUD for users and favorites in order to demonstrate ability. Other features needed to fulfill the remaining requirements demanded my attention.
+
+### Icebox
+
+* I want to send private messages to users.<br>
+    I want to be notified when I receive a private message.
+
+
+* I want to follow users to see their prayer requests.<br>
+    I want to be notified when someone follows me.
+
+
+* I want to have a buddy list of users that I can broadcast private prayer requests to.
+    I want to send a request to a user to become buddies.
+    I want to confirm whether or not I want to be someone else's buddy.
+
+
+*Inspired by Stefan Krause-Palfner.*
